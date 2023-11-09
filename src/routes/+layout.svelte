@@ -15,12 +15,14 @@
 		<DarkMode />
 	</nav>
 </header>
-<nav>
+<div class="flex justify-center items-center">
+	<!--<nav>
 	<Sidebar />
 	<Menu2 />
-</nav>
+</nav> -->
 
-<DrawerMenu bind:hidden2 />
+	<DrawerMenu bind:hidden2 />
+</div>
 <main>
 	<slot />
 </main>

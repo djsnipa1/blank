@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors');
+
 /** @type {import('tailwindcss').Config}*/
 const config = {
 	content: [
@@ -10,6 +12,38 @@ const config = {
 	darkMode: 'class',
 
 	theme: {
+		colors: {
+			transparent: 'transparent',
+			current: 'currentColor',
+			black: colors.black,
+			white: colors.white,
+			
+			emerald: colors.emerald,
+			indigo: colors.indigo,
+			yellow: colors.yellow,
+slate: colors.slate,
+		gray: colors.gray,
+		zinc: colors.zinc,
+		neutral: colors.neutral,
+		stone: colors.stone,
+		red: colors.red,
+		orange: colors.orange,
+		amber: colors.amber,
+		yellow: colors.yellow,
+		lime: colors.lime,
+		green: colors.green,
+		emerald: colors.emerald,
+		teal: colors.teal,
+		cyan: colors.cyan,
+		sky: colors.sky,
+		blue: colors.blue,
+		indigo: colors.indigo,
+		violet: colors.violet,
+		purple: colors.purple,
+		fuchsia: colors.fuchsia,
+		pink: colors.pink,
+		rose: colors.rose 
+		},
 		extend: {
 			colors: {
 				// flowbite-svelte

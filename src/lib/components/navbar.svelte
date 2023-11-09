@@ -13,7 +13,7 @@
 	import { BarsSolid } from 'flowbite-svelte-icons';
 	import { onMount } from 'svelte';
 
-	export let hidden2;a awwwwww
+	export let hidden2;
 
 	onMount(() => (hidden2 = true));
 </script>
@@ -22,18 +22,18 @@
 	<Navbar class="px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 border-b">
 		<NavBrand href="/">
 			<img
-				src="/images/flowbite-svelte-icon-logo.svg"
-				class="mr-3 h-6 sm:h-9"
-				alt="Flowbite Logo"
+				src="/images/IMG_5998-removebg-preview.svg"
+				class="mr-3 h-14 sm:h-11 dark:text-white"
+				alt="boycedesigns logo"
 			/>
 			<span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"
-				>Flowbite</span
+				>boycedesigns</span
 			>
 		</NavBrand>
 		<NavHamburger />
 		<Button
 			on:click={() => (hidden2 = false)}
-			class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+			class="bg-gradient-to-tr from-yellow-500 to-orange-500"
 		>
 			<BarsSolid />
 		</Button>
