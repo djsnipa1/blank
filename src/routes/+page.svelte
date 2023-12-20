@@ -1,16 +1,31 @@
 <script>
 	import Psylo from '$lib/components/Psylo.svelte';
-	import NewP5 from '$lib/components/NewP5.svelte';
+	import SvelteStars from '$lib/components/SvelteStars.svelte';
+	import Scale from '$lib/components/Scale.svelte';
+	import { MainCard } from '$components';
+	import ZoomOnHover from '$lib/components/ZoomOnHover.svelte';
 </script>
 
-<Psylo />
-<NewP5 />
+<ul
+	class="text-2xl font-bold bg-gradient-to-br from-pink-600 to-yellow-600 inline-block text-transparent bg-clip-text"
+>
+	<li><a href="/gallery">Gallery Page</a></li>
+	<li><a href="/js30/1">JS30 - 1</a></li>
+	<li><a href="/pat01">Patterns - 01</a></li>
+	<li><a href="/pat02">Patterns - 02</a></li>
+	<li><a href="/pat03">Patterns - 03</a></li>
+	<li><a href="/patterns/code">Code Patterns</a></li>
+</ul>
 
-<p>Psylo Component</p>
+<MainCard />
 
-<div class="dot" style="--i: 1;"></div>
+<Scale />
+
+<img src="https://awik.io/demo/fill-background-gradually/carrot2.png" />
+<p>Hi! I'm a <a id="carrot" href="#">carrot</a> looking forward to swim in the soup.</p>
 
 <h3 class="text-xl">Specific #each tag</h3>
+
 <div class="grid grid-cols-6 m-4 gap-4">
 	{#each Array(6) as _, index (index)}
 		<div class="bg-orange-400 h-12 rounded-tr-md">&nbsp;</div>
@@ -34,12 +49,14 @@
 
 <div class="m-4 h-screen shadow-md rounded-md bg-gradient-to-b from-orange-500 to-yellow-500"></div>
 
-<div class="top top-pattern m-4 rounded-md h-screen shadow-md">fggh</div>
+<div class="top top-pattern m-4 rounded-md h-screen shadow-md">&nbsp;</div>
 <div class="bottom m-4 rounded-md h-screen shadow-md bg-gradient-to-t from-teal-500 to-green-400">
 	&nbsp;
 </div>
 
-<style>
+<ZoomOnHover />
+
+<style lang="scss">
 	:global(body) {
 		color: white;
 	}
@@ -66,19 +83,25 @@
 		background-size: var(--s) calc(2 * var(--s));
 	}
 
+	a#carrot {
+		position: relative;
+		text-decoration: none;
+		color: green;
+	}
 
-/* Repeat the above div 300 times */
-.dot {
- position: absolute;
- width: 5px;
- height: 5px;
- background: red;
- animation: move 3s infinite forwards;
- animation-delay: calc(var(--i) * 0.01s);
-}
+	a:before {
+		content: '';
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 0px;
+		height: 100%;
+		background: orange;
+		transition: all 0.5s;
+		z-index: -1;
+	}
 
-@keyframes move {
- 0% { top: 0; left: 0; }
- 100% { top: 100%; left: 100%; }
-}
+	a:hover:before {
+		width: 100%;
+	}
 </style>
