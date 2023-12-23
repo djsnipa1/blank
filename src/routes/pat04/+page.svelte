@@ -1,22 +1,20 @@
 <script>
-  import { onMount, onDestroy } from "svelte";
+  import { onMount, onDestroy } from 'svelte';
   let sketch;
   let chad = 0;
 
   export let slotSize = 30;
-  console.log(slotSize);
-  slotSize = Math.round(slotSize);
-  console.log(slotSize);
+  let niterations = 5;
+
   let marginX;
   let marginY;
-  
 
- function handleTouchMove(event) {
-   event.preventDefault();
- }
+  function handleTouchMove(event) {
+    event.preventDefault();
+  }
 
   onMount(() => {
-    import("p5")
+    import('p5')
       .then((module) => {
         const p5 = module.default;
 
@@ -25,7 +23,7 @@
             var c = p.createCanvas(p.windowWidth, p.windowHeight);
             c.mousePressed(doStuff);
             p.background(180);
-            p.pixelDensity(1);
+            p.pixelDensity();
 
             marginX =
               p.windowWidth - p.int(p.windowWidth / slotSize) * slotSize;
@@ -35,7 +33,9 @@
 
           p.draw = () => {
             p.background(0);
-            
+            p.noFill();
+            p.stroke(255);
+
             for (
               let i = marginX / 2 + slotSize / 2;
               i < p.width - marginX / 2;
@@ -47,17 +47,22 @@
                 j += slotSize
               ) {
                 // code here
-             //  let s = p.map(dist(i, j, mouseX, mouseY), 0, p.sqrt(p.width * p.width + p.height * p.height), slotSize, 1); 
-               let d = p.dist(p.mouseX, p.mouseY, i, j)
+                for (let k = slotSize; k > 0; k = k - slotSize / niterations) {
+                  let s = p.map(p.mouseX, 0, p.width, 0.5, 5);
+                  p.ellipse(i, j, k * s, k * s);
+                }
+                /* let d = p.dist(p.mouseX, p.mouseY, i, j)
                let dmax = p.sqrt(p.width * p.width + p.height * p.height)
                let s = p.map(d, 0, dmax, slotSize, 1) 
                 p.ellipse(i,j, s, s);
+                 */
               }
             }
           };
 
           function doStuff() {
-            //slotSize = p.random(10, 200);
+            slotSize = p.random(10, 200);
+            niterations = p.int(p.random(2, 20));
             marginX =
               p.windowWidth - p.int(p.windowWidth / slotSize) * slotSize;
             marginY =
@@ -74,10 +79,10 @@
             marginY =
               p.windowHeight - p.int(p.windowHeight / slotSize) * slotSize;
           };
-        }, "#container");
+        }, '#container');
       })
       .catch((err) => {
-        console.error("Failed to load p5", err);
+        console.error('Failed to load p5', err);
       });
   });
 
@@ -105,13 +110,12 @@
 </label>
 -->
 
-
 {@debug chad}
-<div id="container" on:touchmove="{handleTouchMove}" />
+<div id="container" on:touchmove={handleTouchMove} />
 
 <style>
   #container {
-    width: "100%";
-    height: "100%";
+    width: '100%';
+    height: '100%';
   }
 </style>

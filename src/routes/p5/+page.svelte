@@ -1,5 +1,5 @@
 <script>
-  import { onMount, onDestroy } from "svelte";
+  import { onMount, onDestroy } from 'svelte';
   let sketch;
   let chad = 0;
 
@@ -11,7 +11,7 @@
   let marginY;
 
   onMount(() => {
-    import("p5")
+    import('p5')
       .then((module) => {
         const p5 = module.default;
 
@@ -67,10 +67,10 @@
             marginY =
               p.windowHeight - p.int(p.windowHeight / slotSize) * slotSize;
           };
-        }, "#container");
+        }, '#container');
       })
       .catch((err) => {
-        console.error("Failed to load p5", err);
+        console.error('Failed to load p5', err);
       });
   });
 
@@ -87,7 +87,7 @@
 
 <style>
   #container {
-    width: "100%";
-    height: "100%";
+    width: '100%';
+    height: '100%';
   }
 </style>

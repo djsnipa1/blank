@@ -1,21 +1,21 @@
 {
-	// These tasks will run in order when initializing your CodeSandbox project.
-	"setupTasks": [
-		{
-			"name": "p",
-			"command": "pnpm i "
-		}
-	],
+  // These tasks will run in order when initializing your CodeSandbox project.
+  "setupTasks": [
+    {
+      "name": "p",
+      "command": "pnpm i "
+    }
+  ],
 
-	// These tasks can be run from CodeSandbox. Running one will open a log in the app.
-	"tasks": {
-		"pnpm run dev": {
-			"name": "pnpm run dev",
-			"command": "pnpm run dev",
-			"runAtStart": true,
-			"preview": {
-				"port": 5173
-			}
-		}
-	}
+  // These tasks can be run from CodeSandbox. Running one will open a log in the app.
+  "tasks": {
+    "pnpm run dev": {
+      "name": "pnpm run dev",
+      "command": "pnpm run dev",
+      "runAtStart": true,
+      "preview": {
+        "port": 5173
+      }
+    }
+  }
 }

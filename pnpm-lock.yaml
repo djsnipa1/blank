@@ -5,9 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  gsap:
-    specifier: ^3.12.3
-    version: 3.12.3
   p5-svelte:
     specifier: ^3.1.2
     version: 3.1.2(@types/p5@1.7.4)(p5@1.8.0)
@@ -43,9 +40,6 @@ devDependencies:
   eslint-plugin-svelte:
     specifier: ^2.30.0
     version: 2.35.0(eslint@8.53.0)(svelte@4.2.3)
-  lil-gui:
-    specifier: ^0.19.1
-    version: 0.19.1
   p5:
     specifier: ^1.8.0
     version: 1.8.0
@@ -1286,10 +1280,6 @@ packages:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
     dev: true
 
-  /gsap@3.12.3:
-    resolution: {integrity: sha512-TySXTE+ABiAVa61W+h5wv2p5GkJT1Uj//4nWpK8EjmhcDqwH++35IvtbQlVVFj+rdcJdFCdCt0SKgb+SwdPq/A==}
-    dev: false
-
   /has-flag@4.0.0:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
     engines: {node: '>=8'}
@@ -1428,10 +1418,6 @@ packages:
     dependencies:
       prelude-ls: 1.2.1
       type-check: 0.4.0
-    dev: true
-
-  /lil-gui@0.19.1:
-    resolution: {integrity: sha512-9dbIg+UxS8RIROI6OH5gV2KrVE0Cn37bcLOQGF2GKN8ibTxDrUSLzzZfkQR82LnZsgs7DEZOOGfn3zhtd6hk0Q==}
     dev: true
 
   /lilconfig@2.1.0:

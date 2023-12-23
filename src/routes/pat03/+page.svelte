@@ -1,5 +1,5 @@
 <script>
-  import { onMount, onDestroy } from "svelte";
+  import { onMount, onDestroy } from 'svelte';
   let sketch;
   let chad = 0;
 
@@ -9,14 +9,13 @@
   console.log(slotSize);
   let marginX;
   let marginY;
-  
 
- function handleTouchMove(event) {
-   event.preventDefault();
- }
+  function handleTouchMove(event) {
+    event.preventDefault();
+  }
 
   onMount(() => {
-    import("p5")
+    import('p5')
       .then((module) => {
         const p5 = module.default;
 
@@ -35,7 +34,7 @@
 
           p.draw = () => {
             p.background(0);
-            
+
             for (
               let i = marginX / 2 + slotSize / 2;
               i < p.width - marginX / 2;
@@ -47,11 +46,11 @@
                 j += slotSize
               ) {
                 // code here
-             //  let s = p.map(dist(i, j, mouseX, mouseY), 0, p.sqrt(p.width * p.width + p.height * p.height), slotSize, 1); 
-               let d = p.dist(p.mouseX, p.mouseY, i, j)
-               let dmax = p.sqrt(p.width * p.width + p.height * p.height)
-               let s = p.map(d, 0, dmax, slotSize, 1) 
-                p.ellipse(i,j, s, s);
+                //  let s = p.map(dist(i, j, mouseX, mouseY), 0, p.sqrt(p.width * p.width + p.height * p.height), slotSize, 1);
+                let d = p.dist(p.mouseX, p.mouseY, i, j);
+                let dmax = p.sqrt(p.width * p.width + p.height * p.height);
+                let s = p.map(d, 0, dmax, slotSize, 1);
+                p.ellipse(i, j, s, s);
               }
             }
           };
@@ -74,10 +73,10 @@
             marginY =
               p.windowHeight - p.int(p.windowHeight / slotSize) * slotSize;
           };
-        }, "#container");
+        }, '#container');
       })
       .catch((err) => {
-        console.error("Failed to load p5", err);
+        console.error('Failed to load p5', err);
       });
   });
 
@@ -105,13 +104,12 @@
 </label>
 -->
 
-
 {@debug chad}
-<div id="container" on:touchmove="{handleTouchMove}" />
+<div id="container" on:touchmove={handleTouchMove} />
 
 <style>
   #container {
-    width: "100%";
-    height: "100%";
+    width: '100%';
+    height: '100%';
   }
 </style>

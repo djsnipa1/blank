@@ -1,16 +1,16 @@
 export function css(node, properties) {
-	function setProperties() {
-		for (const prop of Object.keys(properties)) {
-			node.style.setProperty(`--${prop}`, properties[prop]);
-		}
-	}
+  function setProperties() {
+    for (const prop of Object.keys(properties)) {
+      node.style.setProperty(`--${prop}`, properties[prop]);
+    }
+  }
 
-	setProperties();
+  setProperties();
 
-	return {
-		update(newProperties) {
-			properties = newProperties;
-			setProperties();
-		}
-	};
+  return {
+    update(newProperties) {
+      properties = newProperties;
+      setProperties();
+    }
+  };
 }
