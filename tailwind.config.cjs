@@ -1,4 +1,4 @@
-const colors = require('tailwindcss/colors')
+const colors = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config}*/
 const config = {
@@ -8,22 +8,20 @@ const config = {
     extend: {}
   },
 
-  plugins: [],
-  
+  plugins: [require('daisyui')],
+
   mode: 'jit',
   theme: {
     extend: {
       backgroundSize: {
-        'size-200': '200% 200%',
+        'size-200': '200% 200%'
       },
       backgroundPosition: {
         'pos-0': '0% 0%',
-        'pos-100': '100% 100%',
-      },
-    },
-  },
+        'pos-100': '100% 100%'
+      }
+    }
+  }
 };
 
 module.exports = config;
-
-

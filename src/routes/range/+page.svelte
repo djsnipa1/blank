@@ -1,5 +1,5 @@
 <script>
-import RangeSlider from '$lib/components/RangeSlider.svelte';
+  import RangeSlider from '$lib/components/RangeSlider.svelte';
 </script>
 
 <RangeSlider />

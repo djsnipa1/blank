@@ -9,6 +9,14 @@
   let marginX;
   let marginY;
 
+  let x = 0;
+  let y = 0;
+
+  function moveDiv(event) {
+    x = event.clientX;
+    y = event.clientY;
+  }
+
   onMount(() => {
     import('p5')
       .then((module) => {
@@ -43,18 +51,15 @@
                 j += slotSize
               ) {
                 // code here
-                for (
-                  let k= slotSize; 
-                  k > 0; 
-                  k = k - slotSize / nteration
-                ) {
+                for (let k = slotSize; k > 0; k = k - slotSize / nteration) {
                   let xOffset = p.map(p.mouseX, 0, p.width, -0.5, 0.5);
-                let yOffset = p.map(p.mouseY, 0, p.height, -0.5, 0.5);
+                  let yOffset = p.map(p.mouseY, 0, p.height, -0.5, 0.5);
                   p.ellipse(
                     i + xOffset * (slotSize - k),
                     j + yOffset * (slotSize - k),
-                    k, k
-                  )
+                    k,
+                    k
+                  );
                 }
               }
             }
@@ -62,7 +67,7 @@
 
           function doStuff() {
             slotSize = p.random(10, 200);
-            nteration = p.int(p.random(2, 20))
+            nteration = p.int(p.random(2, 20));
 
             marginX =
               p.windowWidth - p.int(p.windowWidth / slotSize) * slotSize;
@@ -72,7 +77,8 @@
 
           p.windowResized = () => {
             p.resizeCanvas(p.windowWidth, windowHeight);
-            marginX = windowWidth - p.int(p.windowWidth / slotSize) * slotSize;
+            marginX =
+              p.windowWidth - p.int(p.windowWidth / slotSize) * slotSize;
             marginY =
               p.windowHeight - p.int(p.windowHeight / slotSize) * slotSize;
           };
@@ -91,23 +97,35 @@
   });
 </script>
 
+<div class="div" on:touchmove={moveDiv} style="left: {x}px; top: {y}px;"></div>
 
 <h2 class="text-3xl text-orange-500"><a href="/sample">sample</a></h2>
 
 <label class="flex justify-center display-block">
   slotSize
-  <input type="range" bind:value={slotSize} min="10" max="200" step="0.1" class="w-2/3 h-4 bg-amber-400 appearance-none border-4 border-slate-600 focus:outline-none"/>
+  <input
+    type="range"
+    bind:value={slotSize}
+    min="10"
+    max="200"
+    step="0.1"
+    class="w-2/3 range range-warning range-md"
+  />
   {slotSize}
 </label>
 
-<input type="range" min="0" max="100" value="40" class="w-2/3 h-[20px] bg-pink-500  border-none" />
-
 <label>
   nteration
-  <input type="range" bind:value={nteration} min="2" max="20" step="1.00" />
+  <input
+    type="range"
+    bind:value={nteration}
+    min="2"
+    max="20"
+    step="1.00"
+    class="w-2/3 range range-warning range-md"
+  />
   {nteration}
 </label>
-<input type="range" min="0" max="100" value="40" class="range range-warning" />
 
 {@debug chad}
 <div id="container" />
@@ -120,5 +138,12 @@
   label {
     color: white;
     display: block;
+  }
+
+  .div {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
   }
 </style>

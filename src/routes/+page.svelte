@@ -17,26 +17,42 @@
   <li><a href="/pat04">Patterns - 04</a></li>
   <li><a href="/pat05">Patterns - 05</a></li>
   <li><a href="/pat06">Patterns - 06</a></li>
-    <li><a href="/range">Range Component</a></li>
+  <li><a href="/range">Range Component</a></li>
   <li><a href="/menu">Menu Test</a></li>
+  <li><a href="/menu2">Menu Test 2</a></li>
   <li><a href="/patterns/code">Code Patterns</a></li>
 </ul>
 
 <br />
 
-<button class="text-2xl font-bold transition-all duration-1000 delay-100 bg-gradient-to-tr from-pink-600 to-yellow-600 bg-size-200 bg-[bottom_left_0%] hover:bg-[top_right_100%] hover:bg-pos-100 hover:inline-block text-transparent bg-clip-text">Test Button</button>
+<h1 class="text-3xl font-bold m-4">
+  Words <a
+    href="#"
+    class="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 bg-bottom bg-no-repeat bg-[length:100%_6px] hover:bg-[length:100%_100%] transition-[background-size]"
+    >CodingSpace</a
+  >
+</h1>
 
-<button class="m-2 p-10 text-white rounded-xl transition-all duration-500 bg-gradient-to-t from-red-800 via-red-500 to-red-200 bg-size-200 bg-pos-0 hover:bg-pos-100">Hover me</button>
+<button
+  class="text-2xl font-bold transition-all duration-1000 delay-100 bg-gradient-to-tr from-pink-600 to-yellow-600 bg-size-200 bg-[bottom_left_0%] hover:bg-[top_right_100%] hover:bg-pos-100 hover:inline-block text-transparent bg-clip-text"
+  >Test Button</button
+>
+
+<button
+  class="m-2 p-10 text-white rounded-xl transition-all duration-500 bg-gradient-to-t from-red-800 via-red-500 to-red-200 bg-size-200 bg-pos-0 hover:bg-pos-100"
+  >Hover me</button
+>
 
 <MainCard />
 
 <Scale />
 
+<!--
 <img src="https://awik.io/demo/fill-background-gradually/carrot2.png" />
 <p>
   Hi! I'm a <a id="carrot" href="#">carrot</a> looking forward to swim in the soup.
 </p>
-
+-->
 <h3 class="text-xl">Specific #each tag</h3>
 
 <div class="grid grid-cols-6 m-4 gap-4">
@@ -76,8 +92,6 @@
 >
   &nbsp;
 </div>
-
-<ZoomOnHover />
 
 <style lang="scss">
   :global(body) {
