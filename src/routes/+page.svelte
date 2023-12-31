@@ -2,9 +2,20 @@
   import Psylo from '$lib/components/Psylo.svelte';
   import SvelteStars from '$lib/components/SvelteStars.svelte';
   import Scale from '$lib/components/Scale.svelte';
+  import Button from '$lib/components/Button.svelte';
+  import Transition from '$lib/components/Transition.svelte';
+
   import { MainCard } from '$components';
-  import ZoomOnHover from '$lib/components/ZoomOnHover.svelte';
 </script>
+
+<h1
+  class="text-6xl font-bold bg-gradient-to-br from-yellow-600 to-red-600 inline-block text-transparent bg-clip-text flex justify-center pt-4"
+>
+  Chad Boyce
+</h1>
+
+<Button />
+<Transition />
 
 <ul
   class="text-2xl font-bold bg-gradient-to-br from-pink-600 to-yellow-600 inline-block text-transparent bg-clip-text"
@@ -74,13 +85,7 @@
 </div>
 <div
   class="m-4 h-screen shadow-md rounded-md bg-gradient-to-t from-gray-900 to-gray-600 bg-gradient-to-r text-center"
->
-  <h1
-    class="text-6xl font-bold bg-gradient-to-r from-yellow-600 to-red-600 inline-block text-transparent bg-clip-text"
-  >
-    Chad Boyce
-  </h1>
-</div>
+></div>
 
 <div
   class="m-4 h-screen shadow-md rounded-md bg-gradient-to-b from-orange-500 to-yellow-500"

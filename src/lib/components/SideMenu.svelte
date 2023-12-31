@@ -121,7 +121,6 @@
 
     <!-- ⤵️ Dropdown -->
     <div
-      on:click={() => (dropDownHidden = !dropDownHidden)}
       class="transition duration-1000 hover:bg-yellow-500 p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
       onclick="dropdown()"
     >

@@ -13,6 +13,9 @@ const config = {
   mode: 'jit',
   theme: {
     extend: {
+      fontFamily: {
+        blogger: ['Blogger Sans']
+      },
       backgroundSize: {
         'size-200': '200% 200%'
       },
