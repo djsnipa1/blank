@@ -1,18 +1,34 @@
 const colors = require('tailwindcss/colors');
+const gen = require('tailwind-color-generator');
 
 /** @type {import('tailwindcss').Config}*/
 const config = {
-  content: ['./src/**/*.{html,js,svelte,ts}'],
+  purge: ['./src/**/*.{html,js,svelte,ts}'],
 
-  theme: {
-    extend: {}
-  },
-
-  plugins: [require('daisyui')],
-
-  mode: 'jit',
   theme: {
     extend: {
+      colors: {
+        grayscale: {
+          100: '#f8f8f8',
+          200: '#f0f0f0',
+          300: '#e1e1e1',
+          400: '#cdcdcd',
+          500: '#aeaeae',
+          600: '#919191',
+          700: '#767676'
+        },
+        neon: {
+          100: '#eeffca',
+          200: '#dcff40',
+          300: '#a8f800',
+          400: '#7ce700',
+          500: '#4fc700',
+          600: '#2ba800',
+          700: '#108900'
+        },
+        'stonewall': {  
+        DEFAULT: '#928374',  50: '#E3DFDB',  100: '#DAD5CF',  200: '#C8C0B9',  300: '#B6ACA2',  400: '#A4978B',  500: '#928374',  600: '#73675A',  700: '#544B42',  800: '#352F29',  900: '#151311',  950: '#050504'},
+      },
       fontFamily: {
         blogger: ['Blogger Sans']
       },
@@ -24,7 +40,14 @@ const config = {
         'pos-100': '100% 100%'
       }
     }
-  }
+  },
+
+  plugins: [
+    require('daisyui'),
+    gen('gruvbox', '928374')
+    ],
+
+  mode: 'jit'
 };
 
 module.exports = config;

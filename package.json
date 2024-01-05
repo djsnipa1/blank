@@ -39,9 +39,12 @@
   },
   "type": "module",
   "dependencies": {
+    "@fontsource-variable/big-shoulders-display": "^5.0.18",
+    "@fontsource-variable/big-shoulders-inline-display": "^5.0.18",
     "animejs": "^3.2.2",
     "gsap": "^3.12.4",
     "p5-svelte": "^3.1.2",
-    "svelte-inview": "^4.0.1"
+    "svelte-inview": "^4.0.1",
+    "tailwind-color-generator": "^1.0.2"
   }
 }

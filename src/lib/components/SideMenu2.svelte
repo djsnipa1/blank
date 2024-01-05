@@ -1,6 +1,6 @@
 <script>
   import { fly, fade } from 'svelte/transition';
-  import { expoIn } from 'svelte/easing';
+  import { expoIn, expoOut } from 'svelte/easing';
 
   import TestNew from '$lib/components/TestNew.svelte';
 
@@ -14,15 +14,35 @@
     visible = !visible;
   }
 
-  let showSidePanel, width;
+  let showSidePanel = true;
+  let width;
+
   function toggleSidePanel() {
     showSidePanel = !showSidePanel;
   }
+
+  const menuItems = [
+    {
+      path: '/',
+      label: 'Home',
+      icon: 'bi-house-door'
+    },
+    {
+      path: '/search',
+      label: 'Search'
+      //	icon: Search
+    },
+    {
+      path: '/playlists',
+      label: 'Playlists'
+      //	icon: ListMusic
+    }
+  ];
 </script>
 
 <div class="mesh w-full h-screen absolute z-[-1]"></div>
 <div>
-  <button class="p-3 w-[200px] h-30 bg-green-400" on:click={toggleSidePanel}>
+  <button class="p-3 w-[200px] h-30" on:click={toggleSidePanel}>
     Show side panel
   </button>
 </div>
@@ -35,42 +55,50 @@
 </svelte:head>
 
 <!-- component -->
+{#if !showSidePanel}
+<div
+            class="absolute text-white text-4xl top-5 left-4 cursor-pointer"
+            transition:fly={{ x: -width, easing: expoOut, duration: 800 }}
+            on:click={toggleSidePanel}
+          >
+            <i class="bi bi-filter-left px-2 bg-stonewall-500 rounded-md z-100"></i>
+          </div>
+{/if}
 
 {#if showSidePanel}
-  <aside class="relative z-10">
+  <aside class="relative z-10 text-[20px]">
     <div class="fixed inset-0">
       <div
         bind:clientWidth={width}
-        transition:fly={{ x: -width, easing: expoIn, duration: 400 }}
+        transition:fly={{ x: -width, easing: expoOut, duration: 800 }}
         class="m-auto flex h-[95%] flex-col overflow-y-scroll py-6 shadow-xl"
       >
-        <div class="bg-blue-600">
-          <span
+        <div>
+       <!--   <span
             class="absolute text-white text-4xl top-5 left-4 cursor-pointer"
             on:click={toggleSidePanel}
           >
-            <i class="bi qbi-filter-left px-2 bg-gray-900 rounded-md"></i>
+            <i class="bi bi-filter-left px-2 bg-amber-500 rounded-md z-100"></i>
           </span>
-
+      -->
           <div
-            class="sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-gray-900"
+            class="sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[200px] overflow-y-auto text-center bg-stonewall-800 shadow-xl"
           >
             <div class="text-gray-100 text-xl">
-              <div class="p-2.5 mt-1 flex items-center">
-                <i class="bi bi-app-indicator px-2 py-1 rounded-md bg-blue-600"
-                ></i>
+              <div class="p-1 mt-1 flex items-center">
+                <i class="bi bi-app-indicator p-1 rounded-md bg-stonewall-600"></i>
                 <h1
-                  class="font-blogger font-bold text-gray-200 text-[15px] ml-3"
+                  class="font-blogger font-bold text-stonewall-100 text-[20px] ml-2.5 mt-1"
                 >
                   TailwindCSS
                 </h1>
                 <i
-                  class="bi bi-x cursor-pointer ml-28 lg:hidden"
+                  class="bi bi-x cursor-pointer ml-3 lg:hidden"
                   on:click={toggleSidePanel}
                 >
                 </i>
               </div>
-              <div class="my-2 bg-gray-600 h-[1px]"></div>
+              <div class="my-2 bg-stonewall-600 h-[1px]"></div>
             </div>
 
             <!-- 🔎 Search box
@@ -101,19 +129,20 @@
 </ul>
 -->
             <div
-              class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+              class="p-0 mt-2 flex items-center rounded-sm px-2 duration-300 cursor-pointer text-white hover:bg-neon-200"
             >
-              <i class="bi bi-house-door-fill"></i>
+              <i class="bi bi-house-door-fill text-neon-300"></i>
               <span
-                class="font-blogger text-[15px] ml-4 text-gray-200 font-bold"
-                ><a href="/">Home</a></span
+                class="flex mt-1 ml-3"
+                ><a class="font-blogger font-medium text-stonewall-50" href="#">Home</a></span
               >
             </div>
             <div
-              class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+              class="p-0 mt-2 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
             >
-              <i class="bi bi-bookmark-fill"></i>
-              <span class="text-[15px] ml-4 text-gray-200 font-bold"
+              <i class="bi bi-bookmark"></i>
+              <span
+                class="font-blogger font-medium flex mt-1 ml-3 text-gray-200"
                 ><a href="/gallery">Gallery Page</a></span
               >
             </div>
@@ -122,13 +151,11 @@
             <!-- ⤵️ Dropdown -->
             <div
               on:click={toggle2}
-              class="transition duration-1000 hover:bg-yellow-500 p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
+              class="refleckt transition duration-1000 hover:bg-yellow-500 p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
             >
               <i class="bi bi-chat-left-text-fill"></i>
               <div class="flex justify-between w-full items-center">
-                <span class="text-[15px] ml-4 text-gray-200 font-bold"
-                  >P5.js Patterns</span
-                >
+                <span class="ml-4 text-gray-200">P5.js Patterns</span>
                 <span
                   class="text-sm {dropDownHidden === true
                     ? 'rotate-0'
@@ -158,9 +185,7 @@ out:fly="{{ x: 200, duration: 1000,delay:i*200 }}">
               class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
             >
               <i class="bi bi-box-arrow-in-right"></i>
-              <span class="text-[15px] ml-4 text-gray-200 font-bold"
-                >Logout</span
-              >
+              <span class="text-[15px] ml-4 text-gray-200">Logout</span>
             </div>
           </div>
         </div>
@@ -182,5 +207,42 @@ out:fly="{{ x: 200, duration: 1000,delay:i*200 }}">
       radial-gradient(at 84% 17%, rgb(231, 229, 228) 0, transparent 35%),
       radial-gradient(at 22% 15%, rgb(219, 39, 119) 0, transparent 26%),
       radial-gradient(at 29% 21%, rgb(64, 64, 64) 0, transparent 6%);
+  }
+
+  button {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 20px 30px;
+    text-decoration: none;
+    background-color: #3b3b3b;
+    border-radius: 5px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: background-color 0.4s;
+  }
+  refleckt:before,
+  button:before,
+  button2:before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0px;
+    left: 0px;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #ffffff71, transparent);
+    transform: translateX(-180px) skew(-20deg);
+    transition: transform 0.4s;
+  }
+  refleckt:hover::before,
+  button:hover::before,
+  button2:hover::before {
+    transform: translateX(220px) skew(-20deg);
+  }
+ 
+  span {
+    color: theme('colors.neon.200');
   }
 </style>

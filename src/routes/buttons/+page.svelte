@@ -1,11 +1,17 @@
 <script>
-  export let label;
+  import Button from '$lib/components/Button.svelte';
 </script>
 
-<button
-  class="hover:bg-gradient-to-br from-amber-400 to-pink-500 hover:duration-1000"
-  >{label}</button
->
+<div class="grid place-items-center">
+  <Button label="Motherfuck" />
+
+  <button class="hover:bg-orange-500">Motherfucker</button>
+
+  <button
+    class="bg-gradient-to-tr from-amber-500 to-pink-500 bg-[position:_0%_0%] hover:bg-[position:_100%_100%] bg-[size:_200%] h-40 w-40 transition-all duration-1000"
+    >Pure Tailwind</button
+  >
+</div>
 
 <style>
   button {

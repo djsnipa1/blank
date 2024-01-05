@@ -9,12 +9,12 @@
 </script>
 
 <h1
-  class="text-6xl font-bold bg-gradient-to-br from-yellow-600 to-red-600 inline-block text-transparent bg-clip-text flex justify-center pt-4"
+  class="text-6xl font-bold bg-gradient-to-br from-neon-200 to-neon-600 text-transparent bg-clip-text flex justify-center p-4"
 >
   Chad Boyce
 </h1>
 
-<Button />
+<Button label={'Motherfuck'} />
 <Transition />
 
 <ul
@@ -102,7 +102,11 @@
   :global(body) {
     color: white;
   }
-
+  h1,
+  h2 {
+    font-family: 'Big Shoulders Inline Display Variable', sans-serif;
+    font-weight: 900;
+  }
   .top {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 25px));
   }
