@@ -1,0 +1,7 @@
+run = "pnpm run dev"
+
+[nix]
+channel = "stable-23_11"
+
+[deployment]
+run = ["pnpm", "run", "dev"]
