@@ -14,14 +14,21 @@
   Chad Boyce
 </h1>
 
-<Button label={'Motherfuck'} />
+<!-- <Button label={'Motherfuck'} />
 <Transition />
-
+-->
 <ul
   class="text-2xl font-bold bg-gradient-to-br from-pink-600 to-yellow-600 inline-block text-transparent bg-clip-text"
 >
+  <li><a href="/svg">SVG</a></li>
+  <li><a href="/overlay">Overlay</a></li>
+  <li><a href="/michael">Michael</a></li>
+  <li><a href="/confetti">Confetti</a></li>
+  <li><a href="/cssdoodle/3">CSS Doodle 3</a></li>
+  <li><a href="/obsidianlink">Obsidian Link</a></li>
   <li><a href="/gallery">Gallery Page</a></li>
   <li><a href="/js30/1">JS30 - 1</a></li>
+  <li><a href="/gradient">Gradient</a></li>
   <li><a href="/pat01">Patterns - 01</a></li>
   <li><a href="/pat02">Patterns - 02</a></li>
   <li><a href="/pat03">Patterns - 03</a></li>
@@ -43,7 +50,7 @@
     >CodingSpace</a
   >
 </h1>
-
+<!--
 <button
   class="text-2xl font-bold transition-all duration-1000 delay-100 bg-gradient-to-tr from-pink-600 to-yellow-600 bg-size-200 bg-[bottom_left_0%] hover:bg-[top_right_100%] hover:bg-pos-100 hover:inline-block text-transparent bg-clip-text"
   >Test Button</button
@@ -53,11 +60,12 @@
   class="m-2 p-10 text-white rounded-xl transition-all duration-500 bg-gradient-to-t from-red-800 via-red-500 to-red-200 bg-size-200 bg-pos-0 hover:bg-pos-100"
   >Hover me</button
 >
-
+-->
+<!--
 <MainCard />
 
 <Scale />
-
+-->
 <!--
 <img src="https://awik.io/demo/fill-background-gradually/carrot2.png" />
 <p>

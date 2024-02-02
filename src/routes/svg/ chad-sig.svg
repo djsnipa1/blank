@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xml:space="preserve" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 812 375">
+  <g vectornator:layerName="chad">
+    <path vectornator:layerName="Curve 1" fill="none" stroke="#000" stroke-width="10" d="M308 63c-44-30-146 90-179 173-4 9-7 19-9 29-1 5-8 31 13 42 20 11 53 10 69 1 61-31 110-114 144-170 18-29 34-60 51-89 1-3 2-9 5-8 7 3-7 17-16 28-21 27-41 52-59 81-24 38-44 77-64 118l-14 31c-2 6-3 13-8 17-3 1-3-5-4-8 0-4 2-7 3-10 2-12 3-20 12-31 29-39 70-72 107-105 4-3 9-13 13-9s-2 12-4 17c-4 9-10 15-15 23-8 12-36 50-38 73-1 11 4 19 19 20 7 0 15 2 22 0 21-5 41-14 61-22l71-24"/>
+  </g>
+  <g vectornator:layerName="b1">
+    <path vectornator:layerName="Curve 2" fill="none" stroke="#000" stroke-width="10" d="M441 87c-1 18-5 34-10 50-9 27-21 52-29 80-6 24-8 49-8 74"/>
+  </g>
+  <g vectornator:layerName="b2">
+    <path vectornator:layerName="Curve 3" fill="none" stroke="#000" stroke-width="10" d="M327 156c42-60 124-82 193-96l42-6c5 0 11-3 16 0 9 7-13 27-26 38-41 35-87 64-127 100-6 4-13 8-15 15 0 3 7 3 10 2 10-2 20-7 31-10 20-4 85-19 94 10 11 39-27 59-55 77-29 18-58 32-91 39l-27 4c-6 1-13 4-18 2-3-2 4-6 7-8 11-8 23-14 34-21 30-18 53-33 86-45 30-11 63-19 95-24 21-3 42 1 63-2 37-6 64-14 102-24"/>
+  </g>
+</svg>

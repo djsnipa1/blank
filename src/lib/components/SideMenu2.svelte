@@ -1,6 +1,7 @@
 <script>
   import { fly, fade } from 'svelte/transition';
   import { expoIn, expoOut } from 'svelte/easing';
+  import TailwindIcon from '~icons/logos/tailwindcss-icon';
 
   import TestNew from '$lib/components/TestNew.svelte';
 
@@ -56,13 +57,13 @@
 
 <!-- component -->
 {#if !showSidePanel}
-<div
-            class="absolute text-white text-4xl top-5 left-4 cursor-pointer"
-            transition:fly={{ x: -width, easing: expoOut, duration: 800 }}
-            on:click={toggleSidePanel}
-          >
-            <i class="bi bi-filter-left px-2 bg-stonewall-500 rounded-md z-100"></i>
-          </div>
+  <div
+    class="absolute text-white text-4xl top-5 left-4 cursor-pointer"
+    transition:fly={{ x: 100, opacity: 0.5, duration: 250 }}
+    on:click={toggleSidePanel}
+  >
+    <i class="bi bi-filter-left px-2 bg-stonewall-500 rounded-md z-100"></i>
+  </div>
 {/if}
 
 {#if showSidePanel}
@@ -70,28 +71,19 @@
     <div class="fixed inset-0">
       <div
         bind:clientWidth={width}
-        transition:fly={{ x: -width, easing: expoOut, duration: 800 }}
+        transition:fly={{ x: -width, duration: 250, opacity: 1 }}
         class="m-auto flex h-[95%] flex-col overflow-y-scroll py-6 shadow-xl"
       >
         <div>
-       <!--   <span
-            class="absolute text-white text-4xl top-5 left-4 cursor-pointer"
-            on:click={toggleSidePanel}
-          >
-            <i class="bi bi-filter-left px-2 bg-amber-500 rounded-md z-100"></i>
-          </span>
-      -->
           <div
             class="sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[200px] overflow-y-auto text-center bg-stonewall-800 shadow-xl"
           >
-            <div class="text-gray-100 text-xl">
+            <div class="text-gray-100 text-xl font-blogger font-medium">
               <div class="p-1 mt-1 flex items-center">
-                <i class="bi bi-app-indicator p-1 rounded-md bg-stonewall-600"></i>
-                <h1
-                  class="font-blogger font-bold text-stonewall-100 text-[20px] ml-2.5 mt-1"
-                >
-                  TailwindCSS
-                </h1>
+                <i class="bi bi-app-indicator p-1 rounded-md bg-stonewall-600"
+                ></i>
+                TailwindCSS
+
                 <i
                   class="bi bi-x cursor-pointer ml-3 lg:hidden"
                   on:click={toggleSidePanel}
@@ -101,40 +93,15 @@
               <div class="my-2 bg-stonewall-600 h-[1px]"></div>
             </div>
 
-            <!-- 🔎 Search box
-    <div
-      class="p-2.5 flex items-center rounded-md px-4 duration-300 cursor-pointer bg-gray-700 text-white"
-    >
-      <i class="bi bi-search text-sm"></i>
-      <input
-        type="text"
-        placeholder="Search"
-        class="text-[15px] ml-4 w-full bg-transparent focus:outline-none"
-      />
-    </div>
-    -->
-
-            <!-- 🔗 Links
-      <li><a href="/gallery">Gallery Page</a></li>
-  <li><a href="/js30/1">JS30 - 1</a></li>
-  <li><a href="/pat01">Patterns - 01</a></li>
-  <li><a href="/pat02">Patterns - 02</a></li>
-  <li><a href="/pat03">Patterns - 03</a></li>
-  <li><a href="/pat04">Patterns - 04</a></li>
-  <li><a href="/pat05">Patterns - 05</a></li>
-  <li><a href="/pat06">Patterns - 06</a></li>
-  <li><a href="/range">Range Component</a></li>
-  <li><a href="/menu">Menu Test</a></li>
-  <li><a href="/patterns/code">Code Patterns</a></li>
-</ul>
--->
             <div
               class="p-0 mt-2 flex items-center rounded-sm px-2 duration-300 cursor-pointer text-white hover:bg-neon-200"
             >
               <i class="bi bi-house-door-fill text-neon-300"></i>
-              <span
-                class="flex mt-1 ml-3"
-                ><a class="font-blogger font-medium text-stonewall-50" href="#">Home</a></span
+              <span class="flex mt-1 ml-3"
+                ><a
+                  class="text-[16px] font-blogger font-medium text-stonewall-50"
+                  href="#">Home</a
+                ></span
               >
             </div>
             <div
@@ -171,13 +138,6 @@
                 class="font-blogger text-left text-[15px] mt-2 w-4/5 mx-auto text-gray-200 font-bold"
                 id="submenu"
               >
-                <!-- PATTERNS EACH BLOCK -->
-                <!--  {#each {length: 6} as _, i}
-        <h1 class="cursor-pointer p-2 hover:text-yellow-600 rounded-md mt-1" in:fly="{{x: -200,duration: 1000,delay:i*200 }}" 
-out:fly="{{ x: 200, duration: 1000,delay:i*200 }}">
-          <a href="/pat0{i + 1}">Patterns - {i + 1}</a>
-        </h1>
-      {/each} -->
                 <TestNew />
               </div>
             {/if}
@@ -241,7 +201,7 @@ out:fly="{{ x: 200, duration: 1000,delay:i*200 }}">
   button2:hover::before {
     transform: translateX(220px) skew(-20deg);
   }
- 
+
   span {
     color: theme('colors.neon.200');
   }

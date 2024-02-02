@@ -1,3 +1,8 @@
+<script>
+  import LayeredGradient from '$lib/components/LayeredGradient.svelte';
+</script>
+
+<LayeredGradient />
 <div>Hover</div>
 
 <style>

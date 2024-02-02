@@ -1,5 +1,4 @@
 const colors = require('tailwindcss/colors');
-const gen = require('tailwind-color-generator');
 
 /** @type {import('tailwindcss').Config}*/
 const config = {
@@ -26,8 +25,20 @@ const config = {
           600: '#2ba800',
           700: '#108900'
         },
-        'stonewall': {  
-        DEFAULT: '#928374',  50: '#E3DFDB',  100: '#DAD5CF',  200: '#C8C0B9',  300: '#B6ACA2',  400: '#A4978B',  500: '#928374',  600: '#73675A',  700: '#544B42',  800: '#352F29',  900: '#151311',  950: '#050504'},
+        stonewall: {
+          DEFAULT: '#928374',
+          50: '#E3DFDB',
+          100: '#DAD5CF',
+          200: '#C8C0B9',
+          300: '#B6ACA2',
+          400: '#A4978B',
+          500: '#928374',
+          600: '#73675A',
+          700: '#544B42',
+          800: '#352F29',
+          900: '#151311',
+          950: '#050504'
+        }
       },
       fontFamily: {
         blogger: ['Blogger Sans']
@@ -42,10 +53,18 @@ const config = {
     }
   },
 
-  plugins: [
-    require('daisyui'),
-    gen('gruvbox', '928374')
-    ],
+  plugins: [require('daisyui')],
+  
+  daisyui: {
+    themes: true,
+    darkTheme: "coffee",
+    base: true, // applies background color and foreground color for root element by default
+    styled: true, // include daisyUI colors and design decisions for all components
+    utils: true, // adds responsive and modifier utility classes
+    prefix: "", // prefix for daisyUI classnames (components, modifiers and responsive class names. Not colors)
+    logs: false, // Shows info about daisyUI version and used config in the console when building your CSS
+    themeRoot: ":root", // The element that receives theme color CSS variables
+  },
 
   mode: 'jit'
 };
