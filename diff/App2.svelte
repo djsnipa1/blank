@@ -1,5 +1,5 @@
 <script>
-  import 'css-doodle'
+  import 'css-doodle';
   // HELLO: you need to edit this file once to make it work!!!
   import Doodle2 from './Doodle2.svelte';
   $: doodle = `
@@ -16,25 +16,29 @@
         rotate(@r(-10deg, 10deg));
     opacity: @r(.2, 1);
     background: @pick(${color}, #fff);
-  `
+  `;
   let color = 'blueviolet';
-  let scale = '@rand(1,2)'
+  let scale = '@rand(1,2)';
 </script>
-<input bind:value={scale}>
-<input bind:value={color}>
-<br><br><br>
+
+<input bind:value={scale} />
+<input bind:value={color} />
+<br /><br /><br />
 
 <css-doodle use={doodle} />
 
-<br><br><br>
+<br /><br /><br />
 <Doodle2 />
+
+<svelte:head>
+  <script
+    defer
+    src="https://unpkg.com/css-doodle@0.8.5/css-doodle.min.js"
+  ></script>
+</svelte:head>
 
 <style>
   :global(css-doodle) {
     margin: auto;
   }
 </style>
-
-<svelte:head>
-    <script defer src="https://unpkg.com/css-doodle@0.8.5/css-doodle.min.js"></script>
-</svelte:head>

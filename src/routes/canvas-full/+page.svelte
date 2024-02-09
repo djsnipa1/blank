@@ -1,13 +1,30 @@
+
+<!-- FullScreenCanvas.svelte -->
 <script>
+  import { browser } from '$app/environment';
+  import { onMount, onDestroy } from 'svelte';
   import gruvbox from 'gruvbox';
-  import { onMount } from 'svelte';
 
   let canvas;
-  let ctx;
+  let ctx
 
-  onMount(() => {
+if (browser) {
+	const resizeHandler = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    // Redraw or update your canvas content here
+  };
+
+  onMount(() => {
+		window.addEventListener('resize', resizeHandler);
+    resizeHandler(); // Initial resize
+
+    canvas.width = outerWidth * 2;
+    //canvas.height = window.innerHeight;
+    canvas.height = outerHeight * 2;
+    canvas.style.width = outerWidth;
+    canvas.style.height = outerHeight;
+    canvas.getContext('2d').scale(2,2)
     ctx = canvas.getContext('2d');
     ctx.globalCompositeOperation = 'destination-over';
     console.log('Canvas dimensions:', canvas.width, canvas.height);
@@ -23,8 +40,8 @@
     function drawFlower() {
       let angle = number * 4;
       let radius = scale * Math.sqrt(number);
-      let positionX = radius * Math.sin(angle) + canvas.width / 2;
-      let positionY = radius * Math.cos(angle) + canvas.height / 2;
+      let positionX = radius * Math.sin(angle) + canvas.width / 4;
+      let positionY = radius * Math.cos(angle) + canvas.height / 4;
 
       ctx.beginPath();
       ctx.arc(positionX, positionY, number * 0.1, 0, 2 * Math.PI);
@@ -47,17 +64,29 @@
     }
     animate();
   });
+
+	onDestroy(() => {
+    window.removeEventListener('resize', resizeHandler);
+  });
+  }
 </script>
 
-<canvas bind:this={canvas} id="canvas1"></canvas>
+<canvas bind:this={canvas}></canvas>
 
+
+<!-- FullScreenCanvas.svelte -->
 <style>
-  #canvas1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    @apply bg-stonewall-900;
+  :global(body, html) {
+    margin:  0;
+    padding:  0;
+    overflow: hidden; /* Prevent scrollbars */
+  }
+
+  canvas {
+    position: fixed; /* Fixed position to cover the entire viewport */
+    top:  0;
+    left:  0;
+    width:  100vw; /* Viewport width */
+    height: 100vh; /* Viewport height */
   }
 </style>

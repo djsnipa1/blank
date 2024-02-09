@@ -1,6 +1,5 @@
 <css-doodle>
-
-{`@grid: 16 / 320px;
+  {`@grid: 16 / 320px;
 :doodle {@shape: circle;}
 @size: 1px calc(141.4% + 1px);
 transform: rotate(@p(±45deg));
@@ -14,5 +13,4 @@ margin: auto;
 @random {
   transform: scale(2);
 }`}
-
 </css-doodle>

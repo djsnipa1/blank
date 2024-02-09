@@ -2,6 +2,7 @@
   import ThemeSelect from '$lib/components/ThemeSelect.svelte';
   import Links from '$lib/links.js';
 </script>
+
 <!--
 <ThemeSelect />
 -->
@@ -52,7 +53,6 @@
     </ul>
   </div>
 </div>
-
 
 <style lang="postcss">
   :global(body) {

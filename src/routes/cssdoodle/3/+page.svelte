@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import {CSSDoodle} from 'css-doodle';
+  import { CSSDoodle } from 'css-doodle';
   import Doodle2 from './doodle2.svelte';
   import Doodle3 from './doodle3.svelte';
 

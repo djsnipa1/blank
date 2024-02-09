@@ -12,13 +12,12 @@
   import '@fontsource/khand/500.css';
   import '@fontsource/khand/600.css';
   import '@fontsource/khand/700.css';
-  
 </script>
 
 <h1
   class="khand font-weight-600 text-6xl font-bold bg-gradient-to-br from-neon-200 to-neon-600 text-transparent bg-clip-text flex justify-center p-4"
 >
-  Chad Boyce<br><span class="font-bold">CHAD BOYCE</span>
+  Chad Boyce<br /><span class="font-bold">CHAD BOYCE</span>
 </h1>
 
 <!-- <Button label={'Motherfuck'} />

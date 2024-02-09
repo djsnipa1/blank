@@ -2,6 +2,7 @@
   import ThemeSelect from '$lib/components/ThemeSelect.svelte';
   import { links } from '$lib/links.js';
 </script>
+
 <!--
 <ThemeSelect />
 -->
@@ -47,17 +48,16 @@
     ></label>
     <ul class="menu p-4 w-80 min-h-full bg-base-200">
       {#each links as link, index}
-              <li key={index}>
-                <a href={link.path}>{link.name}</a>
-              </li>
-            {/each}
+        <li key={index}>
+          <a href={link.path}>{link.name}</a>
+        </li>
+      {/each}
       <!-- Sidebar content here -->
       <li><a>Sidebar Item 1</a></li>
       <li><a>Sidebar Item 2</a></li>
     </ul>
   </div>
 </div>
-
 
 <style lang="postcss">
   :global(body) {

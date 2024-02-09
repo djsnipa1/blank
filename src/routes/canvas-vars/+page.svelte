@@ -1,16 +1,23 @@
 <script>
-  import gruvbox from "gruvbox";
-  import {onMount} from "svelte";
+  import gruvbox from 'gruvbox';
+  import { onMount } from 'svelte';
+
+  $: outerWidth = 0
+	$: innerWidth = 0
+	$: outerHeight = 0
+	$: innerHeight = 0
 
   let canvas;
   let ctx;
 
   onMount(() => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    ctx = canvas.getContext("2d");
-    ctx.globalCompositeOperation = "destination-over";
-    console.log("Canvas dimensions:", canvas.width, canvas.height);
+    //canvas.width = window.innerWidth;
+    canvas.width = outerWidth;
+    //canvas.height = window.innerHeight;
+    canvas.height = outerHeight;
+    ctx = canvas.getContext('2d');
+    ctx.globalCompositeOperation = 'destination-over';
+    console.log('Canvas dimensions:', canvas.width, canvas.height);
     console.log(gruvbox.dark0);
     let number = 0;
     let scale = 5;
@@ -31,7 +38,7 @@
       ctx.closePath();
       ctx.fillStyle = `hsl(${hue}, 100%, 50%)`;
       ctx.fill();
-      ctx.strokeStyle = "black";
+      ctx.strokeStyle = 'black';
       ctx.lineWidth = 2;
       ctx.stroke();
 
@@ -49,7 +56,11 @@
   });
 </script>
 
-<canvas bind:this="{canvas}" id="canvas1"></canvas>
+<svelte:window bind:innerWidth bind:outerWidth bind:innerHeight bind:outerHeight />
+
+{outerWidth}, {outerHeight}
+
+<canvas bind:this={canvas} id="canvas1"></canvas>
 
 <style>
   #canvas1 {
@@ -58,6 +69,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    @apply bg-stonewall-900;
+  
+  }
+  
+  :global(body) {
+      @apply bg-stonewall-900;
   }
 </style>
