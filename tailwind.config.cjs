@@ -2,7 +2,7 @@ const colors = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config}*/
 const config = {
-  purge: ['./src/**/*.{html,js,svelte,ts}'],
+  content: ['./src/**/*.{html,js,svelte,ts}'],
 
   theme: {
     extend: {
@@ -41,7 +41,8 @@ const config = {
         }
       },
       fontFamily: {
-        blogger: ['Blogger Sans']
+        blogger: ['Blogger Sans'],
+        khand: ['Khand'],
       },
       backgroundSize: {
         'size-200': '200% 200%'

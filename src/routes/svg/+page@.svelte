@@ -4,13 +4,19 @@
 	
 	let condition = false;
 	function workGodDamnIt() {
+    console.log("push clicked")
 		condition = !condition;
-		console.lig("push clicked")
+		
 	} 
 </script>
-<div class="min-h-screen flex flex-col justify-center items-center border-green-500 border-2">
-<button class="btn btn-xs bg-sm:btn-sm md:btn-md lg:btn-lg mb-4" on:click={workGodDamnIt}>
-	Show SVG 
+<div class="min-h-screen flex flex-col justify-center items-center z-[1] bg-amber-500">
+<button class="btn sm:btn-sm md:btn-md lg:btn-lg z-[100]" on:click={workGodDamnIt}>
+	{#if condition}
+    Hide SVG
+    {:else}
+      Show SVG
+  {/if}
+  
 </button>
 
 
@@ -30,6 +36,7 @@
 }
 	svg {
 		display: block;
+    z-index: 200;
 		
 		
 	}

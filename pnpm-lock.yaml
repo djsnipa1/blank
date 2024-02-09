@@ -11,6 +11,12 @@ dependencies:
   '@fontsource-variable/big-shoulders-inline-display':
     specifier: ^5.0.18
     version: 5.0.18
+  '@fontsource/khand':
+    specifier: ^5.0.8
+    version: 5.0.8
+  '@neoconfetti/svelte':
+    specifier: ^2.2.1
+    version: 2.2.1
 
 devDependencies:
   '@iconify-json/game-icons':
@@ -39,7 +45,7 @@ devDependencies:
     version: 10.4.16(postcss@8.4.31)
   css-doodle:
     specifier: ^0.38.3
-    version: 0.38.3
+    version: 0.38.4
   daisyui:
     specifier: ^4.4.23
     version: 4.4.23(postcss@8.4.31)
@@ -91,12 +97,15 @@ devDependencies:
   svelte-image-gallery:
     specifier: ^1.7.1
     version: 1.7.1
-  svelte-inview:
-    specifier: ^4.0.1
-    version: 4.0.1(svelte@4.2.3)
   tailwindcss:
-    specifier: ^3.4.1
-    version: 3.4.1
+    specifier: ^3.3.2
+    version: 3.3.5
+  tslib:
+    specifier: ^2.4.1
+    version: 2.6.2
+  typescript:
+    specifier: ^5.0.0
+    version: 5.2.2
   vite:
     specifier: ^5.0.12
     version: 5.0.12(sass@1.69.5)
@@ -378,6 +387,10 @@ packages:
     resolution: {integrity: sha512-L2UWtEyZVmh05/fsgxw8nwG67kmO7opkwCTugx2jpxVI+PsdrKYcV7fLtsgF8UV2/jniOsJhr6HYRlXwuEillw==}
     dev: false
 
+  /@fontsource/khand@5.0.8:
+    resolution: {integrity: sha512-FzAKSlZ/nMLRn9RsRUJlnuxSi7S2lUdK2de4vQP2q0WucbqPKbLFkAcHzkLdTM0qEcfnBDt0tsHdaRG3a0bDYA==}
+    dev: false
+
   /@humanwhocodes/config-array@0.11.13:
     resolution: {integrity: sha512-JSBDMiDKSzQVngfRjOdFXgFfklaXI4K9nLF49Auh21lmBWRLIK3+xTErTWD4KU54pb6coM6ESE7Awz/FNU3zgQ==}
     engines: {node: '>=10.10.0'}
@@ -443,6 +456,10 @@ packages:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
+
+  /@neoconfetti/svelte@2.2.1:
+    resolution: {integrity: sha512-2Ts0Rxaf6clW2qG+AKhTwpl01AAyZEAe03XeuQ7Vp+qYIaM3ycuI94j546fmEkUxwACwGI3Zl2cZ/pncTuNcJg==}
+    dev: false
 
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1020,8 +1037,8 @@ packages:
       which: 2.0.2
     dev: true
 
-  /css-doodle@0.38.3:
-    resolution: {integrity: sha512-JP/u8m5ZBxNiaauAjcikj+ffLaavMBXRyYYchzftt5qDaQy3c9+sak+uCIVq5jn0AasdRG2+Mpg2nLi/ruPvxA==}
+  /css-doodle@0.38.4:
+    resolution: {integrity: sha512-KM8lhXst5eOWXlF7GcFEe3ll9PpDnXHIrJ1bgAmvDoaE5B2AdVWJviOqr2sSo8qPa1zD1JDXe3rLWU6X1sz6CA==}
     dev: true
 
   /css-selector-tokenizer@0.8.0:
@@ -2008,15 +2025,6 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /postcss@8.4.33:
-    resolution: {integrity: sha512-Kkpbhhdjw2qQs2O2DGX+8m5OVqEcbB9HRBvuYM9pgrjEFUg30A9LmXNlTAUj4S9kgtGyrMbTzVjH7E+s5Re2yg==}
-    engines: {node: ^10 || ^12 || >=14}
-    dependencies:
-      nanoid: 3.3.7
-      picocolors: 1.0.0
-      source-map-js: 1.0.2
-    dev: true
-
   /prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
@@ -2311,14 +2319,6 @@ packages:
     resolution: {integrity: sha512-8jAdrlieDQa3KeYw1Ua5MUuElBwL5a6WEr1l9h5HYIiUjrveLxJYjVrvjZH+CS+qmKkGwi0y03UHnpLSN9o12A==}
     dev: true
 
-  /svelte-inview@4.0.1(svelte@4.2.3):
-    resolution: {integrity: sha512-8NuT/DKFiZAccDw1Z16cIsdZ7K6/BGxrUfDaFaWTCEdn3YqMj1TUAkfmQ08FQ1+INl1G+TQS+ImXIBiiISgXog==}
-    peerDependencies:
-      svelte: ^3.0.0 || ^4.0.0
-    dependencies:
-      svelte: 4.2.3
-    dev: true
-
   /svelte-preprocess@5.1.0(postcss-load-config@4.0.1)(postcss@8.4.31)(sass@1.69.5)(svelte@4.2.3)(typescript@5.2.2):
     resolution: {integrity: sha512-EkErPiDzHAc0k2MF5m6vBNmRUh338h2myhinUw/xaqsLs7/ZvsgREiLGj03VrSzbY/TB5ZXgBOsKraFee5yceA==}
     engines: {node: '>= 14.10.0'}
@@ -2388,8 +2388,8 @@ packages:
       periscopic: 3.1.0
     dev: true
 
-  /tailwindcss@3.4.1:
-    resolution: {integrity: sha512-qAYmXRfk3ENzuPBakNK0SRrUDipP8NQnEY6772uDhflcQz5EhRdD7JNZxyrFHVQNCwULPBn6FNPp9brpO7ctcA==}
+  /tailwindcss@3.3.5:
+    resolution: {integrity: sha512-5SEZU4J7pxZgSkv7FP1zY8i2TIAOooNZ1e/OGtxIEv6GltpoiXUqWvLy89+a10qYTB1N5Ifkuw9lqQkN9sscvA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -2466,6 +2466,10 @@ packages:
 
   /ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
+    dev: true
+
+  /tslib@2.6.2:
+    resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
     dev: true
 
   /type-check@0.4.0:

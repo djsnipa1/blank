@@ -1,6 +1,6 @@
 <script>
   import { confetti } from '@neoconfetti/svelte';
-  import { bright } from 'gruvbox';
+  import bright from 'gruvbox';
 </script>
 
 <div

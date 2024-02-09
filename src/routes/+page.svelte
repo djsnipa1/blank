@@ -6,20 +6,29 @@
   import Transition from '$lib/components/Transition.svelte';
 
   import { MainCard } from '$components';
+
+  import '@fontsource/khand/300.css';
+  import '@fontsource/khand/400.css';
+  import '@fontsource/khand/500.css';
+  import '@fontsource/khand/600.css';
+  import '@fontsource/khand/700.css';
+  
 </script>
 
 <h1
-  class="text-6xl font-bold bg-gradient-to-br from-neon-200 to-neon-600 text-transparent bg-clip-text flex justify-center p-4"
+  class="khand font-weight-600 text-6xl font-bold bg-gradient-to-br from-neon-200 to-neon-600 text-transparent bg-clip-text flex justify-center p-4"
 >
-  Chad Boyce
+  Chad Boyce<br><span class="font-bold">CHAD BOYCE</span>
 </h1>
 
 <!-- <Button label={'Motherfuck'} />
 <Transition />
 -->
 <ul
-  class="text-2xl font-bold bg-gradient-to-br from-pink-600 to-yellow-600 inline-block text-transparent bg-clip-text"
+  class="text-2xl font-semibold bg-gradient-to-br from-pink-600 to-yellow-600 inline-block text-transparent bg-clip-text"
 >
+  <li><a href="/canvas">Canvas</a></li>
+  <li><a href="/newmenu">New Menu</a></li>
   <li><a href="/svg">SVG</a></li>
   <li><a href="/overlay">Overlay</a></li>
   <li><a href="/michael">Michael</a></li>
@@ -110,7 +119,10 @@
   :global(body) {
     color: white;
   }
-  h1,
+  h1 {
+    font-family: 'Khand', sans-serif;
+    font-weight: 600;
+  }
   h2 {
     font-family: 'Big Shoulders Inline Display Variable', sans-serif;
     font-weight: 900;

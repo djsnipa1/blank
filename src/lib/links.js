@@ -1,4 +1,16 @@
 export const links = [
+  {
+      "path": "/canvas-vars",
+      "name": "Canvas Variables"
+   },
+  {
+      "path": "/canvas",
+      "name": "Canvas"
+   },
+  {
+      "path": "/newmenu",
+      "name": "New Menu"
+   },
  {
     "path": "/svg",
     "name": "SVG"
