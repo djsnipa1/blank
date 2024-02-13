@@ -134,10 +134,9 @@
       linear-gradient(-150deg, var(--_l)) #55897c /* third color here */;
     background-size: calc(0.866 * var(--s)) var(--s);
   }
-
+/*
   :global(body) {
     background-color: #290b0b;
     background-image: url('https://www.transparenttextures.com/patterns/3px-tile.png');
-    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-  }
+  } */
 </style>

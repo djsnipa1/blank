@@ -76,12 +76,6 @@ if (browser) {
 
 <!-- FullScreenCanvas.svelte -->
 <style>
-  :global(body, html) {
-    margin:  0;
-    padding:  0;
-    overflow: hidden; /* Prevent scrollbars */
-  }
-
   canvas {
     position: fixed; /* Fixed position to cover the entire viewport */
     top:  0;

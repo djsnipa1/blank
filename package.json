@@ -49,6 +49,7 @@
     "@fontsource-variable/big-shoulders-display": "^5.0.18",
     "@fontsource-variable/big-shoulders-inline-display": "^5.0.18",
     "@fontsource/khand": "^5.0.8",
-    "@neoconfetti/svelte": "^2.2.1"
+    "@neoconfetti/svelte": "^2.2.1",
+    "svelte-tweakpane-ui": "^1.2.0"
   }
 }

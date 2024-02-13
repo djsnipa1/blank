@@ -1,11 +1,13 @@
 <script>
-  import Psylo from '$lib/components/Psylo.svelte';
-  import SvelteStars from '$lib/components/SvelteStars.svelte';
+  // import Psylo from '$lib/components/Psylo.svelte';
+  // import SvelteStars from '$lib/components/SvelteStars.svelte';
   import Scale from '$lib/components/Scale.svelte';
   import Button from '$lib/components/Button.svelte';
   import Transition from '$lib/components/Transition.svelte';
 
   import { MainCard } from '$components';
+  import { MainHero } from '$components';
+  import { GradientBlur } from '$components';
 
   import '@fontsource/khand/300.css';
   import '@fontsource/khand/400.css';
@@ -15,10 +17,14 @@
 </script>
 
 <h1
-  class="khand font-weight-600 text-6xl font-bold bg-gradient-to-br from-neon-200 to-neon-600 text-transparent bg-clip-text flex justify-center p-4"
+  class=" font-weight-600 text-6xl font-bold bg-gradient-to-br from-neon-200 to-neon-600 text-transparent bg-clip-text flex justify-center p-4 font-bold"
 >
-  Chad Boyce<br /><span class="font-bold">CHAD BOYCE</span>
+  Chad Boyce
 </h1>
+
+<MainHero />
+
+<GradientBlur />
 
 <!-- <Button label={'Motherfuck'} />
 <Transition />
@@ -26,26 +32,6 @@
 <ul
   class="text-2xl font-semibold bg-gradient-to-br from-pink-600 to-yellow-600 inline-block text-transparent bg-clip-text"
 >
-  <li><a href="/canvas">Canvas</a></li>
-  <li><a href="/newmenu">New Menu</a></li>
-  <li><a href="/svg">SVG</a></li>
-  <li><a href="/overlay">Overlay</a></li>
-  <li><a href="/michael">Michael</a></li>
-  <li><a href="/confetti">Confetti</a></li>
-  <li><a href="/cssdoodle/3">CSS Doodle 3</a></li>
-  <li><a href="/obsidianlink">Obsidian Link</a></li>
-  <li><a href="/gallery">Gallery Page</a></li>
-  <li><a href="/js30/1">JS30 - 1</a></li>
-  <li><a href="/gradient">Gradient</a></li>
-  <li><a href="/pat01">Patterns - 01</a></li>
-  <li><a href="/pat02">Patterns - 02</a></li>
-  <li><a href="/pat03">Patterns - 03</a></li>
-  <li><a href="/pat04">Patterns - 04</a></li>
-  <li><a href="/pat05">Patterns - 05</a></li>
-  <li><a href="/pat06">Patterns - 06</a></li>
-  <li><a href="/range">Range Component</a></li>
-  <li><a href="/menu">Menu Test</a></li>
-  <li><a href="/menu2">Menu Test 2</a></li>
   <li><a href="/patterns/code">Code Patterns</a></li>
 </ul>
 
@@ -115,9 +101,7 @@
 </div>
 
 <style lang="scss">
-  :global(body) {
-    color: white;
-  }
+  
   h1 {
     font-family: 'Khand', sans-serif;
     font-weight: 600;

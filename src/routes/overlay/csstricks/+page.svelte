@@ -28,7 +28,5 @@
 {/if}
 
 <style>
-  :global(body) {
-    color: white;
-  }
+  
 </style>

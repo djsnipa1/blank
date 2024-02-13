@@ -6,6 +6,7 @@
 <!--
 <ThemeSelect />
 -->
+<div class="background">
 <div class="drawer">
   <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content flex flex-col">
@@ -53,9 +54,10 @@
     </ul>
   </div>
 </div>
+</div>
 
 <style lang="postcss">
-  :global(body) {
+  .background {
     @apply bg-stonewall-900 min-h-screen;
   }
 </style>

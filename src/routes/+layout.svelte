@@ -5,7 +5,7 @@ import ThemeSelect from '$lib/components/ThemeSelect.svelte';
   import { links } from '$lib/links.js';
 </script>
 
-
+<div class="bg-stonewall-800 min-h-full min-w-full">
 <!--
 <ThemeSelect />
 -->
@@ -35,7 +35,7 @@ import ThemeSelect from '$lib/components/ThemeSelect.svelte';
         </label>
       </div>
       <div class="flex-1 px-2 mx-2">Navbar Title</div>
-      <div class="flex-none hidden lg:block">
+      <div class="flex-none hidden lg:block lg:drawer-open">
         <ul class="menu menu-horizontal">
           <!-- Navbar menu content here -->
           <li><a>Navbar Item 1</a></li>
@@ -49,10 +49,10 @@ import ThemeSelect from '$lib/components/ThemeSelect.svelte';
   <div class="drawer-side lg:drawer-open">
     <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"
     ></label>
-    <ul class="menu mt-16 p-4 w-50 min-h-full bg-base-100">
+    <ul class="menu mt-16 p-4 w-50 min-h-full bg-stonewall-600">
       {#each links as link, index}
         <li key={index}>
-          <a href={link.path}>{link.name}</a>
+        <a href={link.path} class="transition-all hover:text-orange-400 hover:bg-stonewall-800">{link.name}</a>
         </li>
       {/each}
       <!-- Sidebar content here -->
@@ -61,9 +61,8 @@ import ThemeSelect from '$lib/components/ThemeSelect.svelte';
     </ul>
   </div>
 </div>
+</div>
 
 <style lang="postcss">
-  :global(body) {
-    @apply bg-stonewall-800 min-h-screen;
-  }
+  
 </style>

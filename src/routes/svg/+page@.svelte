@@ -10,7 +10,7 @@
 </script>
 
 <div
-  class="min-h-screen flex flex-col justify-center items-center z-[1] bg-amber-500"
+  class="background min-h-screen flex flex-col justify-center items-center z-[1] bg-amber-500"
 >
   <button
     class="btn sm:btn-sm md:btn-md lg:btn-lg z-[100]"
@@ -50,9 +50,6 @@
 </div>
 
 <style>
-  :global(body) {
-    @apply bg-amber-600;
-  }
   svg {
     display: block;
     z-index: 200;

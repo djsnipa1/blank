@@ -4,6 +4,7 @@
   "name": "Debian",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
   "image": "mcr.microsoft.com/devcontainers/base:bullseye",
+  // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
     "ghcr.io/devcontainers/features/node": {
       "version": "lts",
@@ -14,10 +15,30 @@
     "ghcr.io/devcontainers/features/sshd": {
       "version": "latest"
     }
-  }
+  },
+   "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscodevim.vim",
+        "dbaeumer.vscode-eslint",
+               "github.vscode-pull-request-github",
+               "eamodio.gitlens",
+               "christian-kohler.npm-intellisense",
+               "svelte.svelte-vscode",
+               "ardenivanov.svelte-intellisense",
+               "aaron-bond.better-comments",
+               "pivaszbs.svelte-autoimport",
+               "bradlc.vscode-tailwindcss"
+      ]
+    }
+  },
+    "portsAttributes": {
+      "5173": {
+         "label": "Sveltekit",
+         "onAutoForward": "openPreview"
+       }
+     }
 
-  // Features to add to the dev container. More info: https://containers.dev/features.
-  // "features": {},
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],

@@ -1,8 +1,10 @@
 <script>
   import { onMount } from 'svelte';
+  import { browser } from '$app/environment';
   import { gsap } from 'gsap';
   import { css } from './cssVars.js';
 
+if (browser) {
   let size = 32;
   // let color = '#c9ff35';
   let color = '#fff';
@@ -93,6 +95,8 @@
       }
     );
   });
+  
+  
 
   let test;
 </script>
@@ -126,8 +130,6 @@
   }
 
   #test {
-    --height: ;
-    --width: ;
     height: calc(var(--height) * 1px);
     width: calc(var(--width) * 1px);
     background: #ffff00;

@@ -1,5 +1,17 @@
 export const links = [
   {
+   path: '/circles',
+   name: 'Circles' 
+  },
+  {
+    path: '#',
+    name: 'test link'
+  },
+  {
+    path: '/starsnew',
+    name: 'Stars New'
+  },
+  {
     path: '/canvas-full',
     name: 'Canvas Full'
   },

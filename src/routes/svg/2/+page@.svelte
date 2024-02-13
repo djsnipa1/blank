@@ -36,9 +36,7 @@
 </svg>
 
 <style>
-  :global(body) {
-    @apply bg-amber-600;
-  }
+  
   svg {
     display: block;
 

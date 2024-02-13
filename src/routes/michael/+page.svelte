@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<div class="min-h-screen grid place-items-center">
+<div class="background min-h-screen grid place-items-center">
   <div
     class="flex justify-center items-center text-center birthday text-7xl leading-[1.2em] swirl-in-fwd"
   >
@@ -14,7 +14,7 @@
   .birthday {
     font-family: 'Nabla', sans-serif;
   }
-  :global(body) {
+  .background {
     background: repeating-conic-gradient(
         hsla(198.13, 81.36%, 23.14%, 1) 0deg 15deg,
         hsla(203.73, 57.26%, 45.88%, 1) 0deg 30deg,

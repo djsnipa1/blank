@@ -60,7 +60,5 @@
 </div>
 
 <style lang="postcss">
-  :global(body) {
-    @apply bg-stonewall-900 min-h-screen;
-  }
+  
 </style>
