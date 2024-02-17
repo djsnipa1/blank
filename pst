@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+url="https://bin.wantguns.dev"
+filepath="$1"
+filename=$(basename -- "$filepath")
+extension="${filename##*.}"
+
+response=$(curl --data-binary @${filepath:-/dev/stdin} --url $url)
+echo "$url$response"".""$extension" | tee >(xclip -selection clipboard)
+
