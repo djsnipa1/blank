@@ -13,8 +13,16 @@
 	Chad Boyce
 </h1>
 
-<div class="wrapper grid grid-cols-4">
-	<button on:click={() => goto('/circles')} class="button btn text-white"> Circles </button>
+<div class="wrapper mx-8 grid grid-cols-4 gap-4">
+	<button on:click={() => goto('/circles')} class="button btn bg-amber-500 text-white">
+		Circles
+	</button>
+	<button on:click={() => goto('/circleclick')} class="button btn bg-amber-500 text-white"
+		>Circle Click</button
+	>
+	<button on:click={() => goto('/letter')} class="button btn bg-amber-500 text-white"
+		>Letterize</button
+	>
 </div>
 
 <style lang="postcss">
