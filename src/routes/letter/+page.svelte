@@ -1,23 +1,37 @@
 <script>
-	import Letterize from 'https://cdn.skypack.dev/letterizejs@2.0.0';
-	const test = new Letterize({
-		targets: '#animateMe'
-	});
+	//import Letterize from 'https://cdn.skypack.dev/letterizejs@2.0.0';
+	//import Letterize from 'letterizejs'
+	import  anime  from 'animejs'
+	import { onMount } from 'svelte'
 
-	var animation = anime.timeline({
-		targets: test.listAll,
-		delay: anime.stagger(50),
-		loop: true
-	});
+	let test
+	onMount(() => {
+	
+	
+	test = new Letterize({
+      targets: "#animateMe"
+    });
 
-	animation
-		.add({
-			translateY: -40
-		})
-		.add({
-			translateY: 0
-		});
+    var animation = anime.timeline({
+      targets: test.listAll,
+      delay: anime.stagger(50),
+      loop: true
+    });
+
+    animation
+      .add({
+        translateY: -40
+      })
+      .add({
+        translateY: 0
+      });
+	})
+
 </script>
+
+<svelte:head>
+<script src="https://cdn.jsdelivr.net/npm/letterizejs@2.0.1/lib/letterize.min.js"></script>
+</svelte:head>
 
 <div class="bodyDiv min-h-full min-w-full bg-amber-500">
 	<div id="animateMe">Letterize.js and Anime.js</div>

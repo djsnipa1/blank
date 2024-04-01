@@ -23,6 +23,9 @@
 	<button on:click={() => goto('/letter')} class="button btn bg-amber-500 text-white"
 		>Letterize</button
 	>
+	<button on:click={() => goto('/reveal')} class="button btn bg-amber-500 text-white">
+		Receal
+	</button>
 </div>
 
 <style lang="postcss">

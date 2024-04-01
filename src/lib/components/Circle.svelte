@@ -11,6 +11,8 @@
 	let div1, div2, div3, w, h, vw, vh, r, divWidth, divHeight, scaleFinal;
 	let style, currentWidth, currentHeight, desiredHeight, desiredWidth, scaleX, scaleY;
 
+let circleMask, mask;
+
 $: scaleFinal
 $: divWidth
 
@@ -36,22 +38,41 @@ console.log(scaleFinal)
 
   const drawLine = (targets, opts) => ({
 		targets,
-		scale: 8,
-		borderWidth: '5px',
+		scale: 9.5,
+	  	opacity: 0,
+		duration: 1500,
 		...opts
 	});
 
 	function setup() {
 		anime.timeline({
-			easing: 'easeOutExpo',
+			easing: 'easeOutSine',
 			autoplay: true,
 			loop: true
 		})
-		.add(drawLine(div1, { duration: 1000, opacity: 100}), 250)
-		.add(drawLine(div2, { duration: 1000, opacity: 100 }), 750)
-		.add({ targets: div3, scale: 8, borderWidth: 5, duration: 2000, opacity: 100 }, 0)
+		.add(drawLine(div1, { scale: 20, opacity: 80 }), 0)
+		.add(drawLine(div2, { duration: 1250 }), 300)
+		.add({ targets: div3, scale: 7, opacity: 0, duration: 1750 }, 700)
+		.add({
+  targets: circleMask,
+  /*width: '200%', // Final width of the circle mask
+  height: '200%', */
+  scale: '200%',
+  duration:  2000, // Duration of the animation in milliseconds
+  easing: 'easeOutQuad'// Easing function for the animation
+}, 50)
+		.add({
+  targets: mask,
+  width: '100%',
+  height: '100%',
+  duration:  2000,
+  easing: 'easeOutQuad'
+}, 150)
 		
 	}
+
+
+
 
 
 /*
@@ -66,7 +87,7 @@ function getScale() {
 	scaleX = desired / currentWidth;
 	scaleY = desiredHeight / currentHeight;
 }
-
+ 
 */
 
 	// https://www.youtube.com/watch?v=ePFw62HISRI
@@ -106,16 +127,23 @@ pl			};
 	 
  <!--  {#if scaling} -->
  <div id="div1" bind:this={div1} bind:clientWidth={divWidth} bind:clientHeight={divHeight}
-			class="absolute mx-auto h-20 w-20 rounded-[100%] border-1 border-amber-500 opacity-0"
+			class="absolute mx-auto h-10 w-10 rounded-[100%] border-[2px] border-white opacity-50"
 		></div>
 		<div id="div2" bind:this={div2}
-		    class="absolute mx-auto h-20 w-20 rounded-[100%] border-1 border-white opacity-0"
+		    class="absolute mx-auto h-20 w-20 rounded-[100%] border-[2px] border-white opacity-100"
 		></div>
 		<div id="div3" bind:this={div3}
-		    class="absolute mx-auto h-20 w-20 rounded-[100%] border-1 border-pink-400 opacity-0"
+		    class="absolute mx-auto h-20 w-20 rounded-[100%] border-2 border-white opacity-70"
 		></div>
 	<!--{/if} -->
 	
+<!-- HTML -->
+<div class="absolute mx-auto h-20 w-20 rounded-[100%] border-2 border-white opacity-70" bind:this={circleMask}></div>
+
+<div class="mask-container">
+  <div bind:this={mask} class="mask"></div>
+  <!-- Your content here -->
+</div>
 
 	
 </div>
@@ -143,4 +171,36 @@ pl			};
 		height: 150px;
 		color: white;
 	}
+
+.circle-mask {
+  position: absolute;
+  /* top:  50%;
+  left:  50%; */
+  width:  5%; /* Initially larger than the viewport */
+  height:  5%; /* Initially larger than the viewport */
+  border-radius:  100%;
+  background-color: white; /* This will be the revealing part */
+  opacity: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mask-container {
+  position: relative;
+  width:  300px; /* Adjust based on your needs */
+  height:  300px; /* Adjust based on your needs */
+  overflow: hidden; /* This is crucial to hide the content outside the mask */
+}
+
+.mask {
+  position: absolute;
+  top:  0;
+  left:  0;
+  width:  5%; /* Initially larger than the container */
+  height:  5%; /* Initially larger than the container */
+  background-color: white; /* Use white to reveal content */
+  border-radius:  50%; /* Make it circular */
+  transform: translate(-50%, -50%);
+}
+
+
 </style>
